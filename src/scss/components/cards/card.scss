@@ -52,20 +52,5 @@
   }
 
   &__button {
-    display: inline-block;
-    font-family: "Mulish", sans-serif;
-    padding: 16px 40px;
-    width: 100%;
-    min-height: 50px;
-    background-color: $color-black;
-    color: $color-white;
-    font-size: 14px;
-    font-weight: 600;
-
-    text-decoration: none;
-    position: relative;
-
-    border: none;
-    cursor: pointer;
   }
 }

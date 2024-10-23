@@ -42,6 +42,7 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 50px 50px;
+        overflow-y: scroll;
       }
       @media (max-width: $tablet-width) {
         padding: 10px 15px 15px 15px;
@@ -72,24 +73,41 @@
     margin-left: auto;
     order: 2;
     margin-right: 23px;
+    transition: all 0.3s;
     @media (max-width: 1420px) {
       margin-left: 0;
     }
     @media (max-width: $tablet-width) {
-      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: calc(100vh - 135px);
+      z-index: 105;
+      left: -100%;
+      width: 100%;
+      width: calc(100% - 30px);
+      margin-right: 0;
+    }
+    &.open {
+      left: 15px;
     }
   }
   &__phone {
-    margin-right: 20px;
-    @media (max-width: 1700px) {
-      margin-right: 5px;
+    &.button--outline {
+      margin-bottom: 6px;
+      width: calc(100% - 17px);
+      margin-left: 10px;
     }
+
+    margin-right: 20px;
     @media (max-width: 1420px) {
       margin-right: 0;
     }
   }
   &__button {
     &.button {
+      width: calc(100% - 17px);
+      margin-left: 10px;
       @media (max-width: 1700px) {
         min-width: fit-content;
       }
@@ -184,8 +202,9 @@
     left: 0;
     height: 100%;
     opacity: 1;
+    overflow: hidden;
     .nav__list {
-      height: auto;
+      height: calc(100vh - 210px);
     }
   }
 }

@@ -82,21 +82,42 @@ p {
   transform: skew(-17deg);
   border: none;
   cursor: pointer;
-}
+  span {
+    display: inline-block;
+    transform: skew(17deg);
+  }
 
-.button span {
-  display: inline-block;
-  transform: skew(17deg);
-}
+  &--secondary {
+    &::after {
+      content: "";
+      position: absolute;
+      right: -14px;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background-color: $color-white;
+    }
+  }
 
-.button::after {
-  content: "";
-  position: absolute;
-  right: -14px;
-  top: 0;
-  width: 6px;
-  height: 100%;
-  background-color: $color-white;
+  &--outline {
+    padding: 0;
+    min-width: 75px;
+    color: #808080;
+    background-color: transparent;
+    border: 1px solid #808080;
+  }
+  &--fill {
+    font-family: "Mulish", sans-serif;
+    padding: 16px 40px;
+    width: 100%;
+    min-height: 50px;
+    text-transform: none;
+    transform: none;
+    background-color: $color-black;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 600;
+  }
 }
 
 .container {
