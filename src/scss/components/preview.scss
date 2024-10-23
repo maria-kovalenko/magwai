@@ -1,6 +1,73 @@
 .preview {
-  &__img {
+  height: calc(100vh - 122.58px);
+  position: relative;
+  margin-bottom: 134px;
+  background-image: url(../img/preview-bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0px -40px;
+  border-radius: 56px 55px 0 0;
+  @media (max-width: 1279px) {
+    background-image: url(../img/preview-bg-table.webp);
+  }
+  @media (max-width: $tablet-width) {
+    background-image: url(../img/preview-bg-mob.webp);
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 50%;
     width: 100%;
-    border-radius: 56px 55px 0 0;
+    height: 50%;
+
+    background: linear-gradient(
+      180deg,
+      rgba(19, 19, 19, 0),
+      rgba(19, 19, 19, 1)
+    );
+  }
+
+  &__container {
+    position: relative;
+    height: 100%;
+  }
+
+  &__content {
+    max-width: 686px;
+    position: absolute;
+    left: 100px;
+    bottom: 96px;
+    @media (max-width: 1420px) {
+      max-width: 100%;
+
+      left: 50px;
+      right: 50px;
+
+      bottom: 207px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    &.title {
+      @media (max-width: 1420px) {
+        font-size: 38px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.79);
+    @media (max-width: 1420px) {
+      max-width: 447px;
+    }
+  }
+  &__button {
+    margin-left: 9px;
   }
 }

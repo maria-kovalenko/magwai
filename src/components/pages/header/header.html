@@ -1,34 +1,43 @@
 <header class="header">
   <div class="container">
     <div class="header__wrapper">
-      <a href="index.html" class="header__logo">
-        <img class="logo" src="./img/logo.svg" alt="Magwai Logo" width="156" />
-      </a>
-      <nav class="header__nav nav">
+      <button class="burger-menu" aria-expanded="false" aria-controls="list">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="header__nav nav" aria-hidden="true">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="#" class="nav__link">Услуги</a>
+            <a href="#" class="nav__link" tabindex="-1">Услуги</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link">Абонементы</a>
+            <a href="#" class="nav__link" tabindex="-1">Абонементы</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link">Почему мы</a>
+            <a href="#" class="nav__link" tabindex="-1">Почему мы</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link">Оборудование</a>
+            <a href="#" class="nav__link" tabindex="-1">Оборудование</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link">Акции</a>
+            <a href="#" class="nav__link" tabindex="-1">Акции</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link">FAQ</a>
+            <a href="#" class="nav__link" tabindex="-1">FAQ</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link">Контакты</a>
+            <a href="#" class="nav__link" tabindex="-1">Контакты</a>
           </li>
         </ul>
       </nav>
+      <a href="index.html" class="header__logo">
+        <picture>
+          <source srcset="./img/logo-mob.svg" media="(max-width: 768px)" />
+          <img class="logo" src="./img/logo.svg" alt="Magwai Logo"
+        /></picture>
+      </a>
       <div class="header__buttons">
         <img
           class="header__phone"
@@ -37,7 +46,9 @@
           width="93"
         />
 
-        <button class="button"><span>Оставить заявку</span></button>
+        <button class="header__button button">
+          <span>Оставить заявку</span>
+        </button>
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 * {
   box-sizing: border-box;
@@ -13,7 +13,7 @@ $color-text: #666666;
 $color-white: #fff;
 
 $mobile-width: 360px;
-$tablet-width: 768px;
+$tablet-width: 767px;
 $desktop-width: 1920px;
 
 body {
@@ -25,8 +25,11 @@ body {
   line-height: 22px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: #fff;
-  background-color: $color-black;
+  color: $color-white;
+  background-color: $color-bg;
+  &.open {
+    overflow-y: hidden;
+  }
 }
 
 img {
@@ -101,4 +104,16 @@ p {
   max-width: 2120px;
   margin: 0 auto;
   padding: 0 100px;
+  @media (max-width: 1700px) {
+    padding: 0 50px;
+  }
+  @media (max-width: $tablet-width) {
+    padding: 0 15px;
+  }
+}
+
+.title {
+  font-size: 42px;
+  line-height: 51px;
+  text-transform: uppercase;
 }
