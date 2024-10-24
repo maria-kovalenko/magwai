@@ -28,7 +28,7 @@ $desktop-width: 1920px;
   color: $color-white;
   background-color: $color-bg;
   &.open {
-    overflow-y: hidden;
+    overflow: hidden;
   }
 }
 
