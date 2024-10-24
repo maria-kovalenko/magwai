@@ -40,6 +40,13 @@
     display: flex;
     justify-content: center;
   }
+  &__load-more {
+    &.button {
+      @media (max-width: $tablet-width) {
+        min-width: 207px;
+      }
+    }
+  }
 }
 
 .spinner {
