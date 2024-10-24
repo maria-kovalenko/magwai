@@ -2,12 +2,10 @@
     const button = document.querySelector('.burger-menu');
     const menu = document.querySelector('.header__nav');
     const links = document.querySelectorAll('.header__nav .nav__link');
-    const submitButton = document.querySelector('.header__buttons');
-  
+
     const toggleMenu = (isActive) => {
       button.setAttribute('aria-expanded', isActive);
       menu.setAttribute('aria-hidden', !isActive);
-      submitButton.classList.toggle('open', isActive);
       document.body.classList.toggle('open', isActive);
       links.forEach(link => link.setAttribute('tabindex', isActive ? '0' : '-1'));
     };

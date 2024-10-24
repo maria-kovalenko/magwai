@@ -10,34 +10,46 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
     @media (max-width: 1420px) {
       justify-content: space-between;
     }
   }
 
-  &__nav {
-    transition: all 0.3s;
-    order: 1;
+  &__nav-wrapper {
+    order: 2;
     @media (max-width: 1420px) {
-      position: absolute;
+      position: fixed;
       left: -100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      top: 0;
       right: 0;
-      top: 120px;
-
-      bottom: 0;
+      padding-top: 60px;
+      padding-bottom: 15px;
       height: 0;
       opacity: 0;
       z-index: 100;
+      background-color: #131313;
+      transition: all 0.3s;
+      order: 1;
       background-color: $color-bg;
     }
 
-    @media (max-width: $tablet-width) {
-      top: 60px;
+    .header__buttons {
+      display: none;
+      @media (max-width: $tablet-width) {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transform: translateX(-100%);
+        margin-right: 15px;
+        margin-left: 15px;
+      }
     }
-
     .nav__list {
       @media (max-width: 1420px) {
-        height: 0;
         line-height: 50px;
         flex-direction: column;
         align-items: flex-start;
@@ -60,6 +72,7 @@
   }
 
   &__logo {
+    z-index: 105;
     order: 0;
     margin-right: 55px;
     @media (max-width: $tablet-width) {
@@ -72,24 +85,14 @@
     align-items: center;
     margin-left: auto;
     order: 2;
+    z-index: 105;
     margin-right: 23px;
     transition: all 0.3s;
     @media (max-width: 1420px) {
       margin-left: 0;
     }
     @media (max-width: $tablet-width) {
-      flex-direction: column;
-      align-items: flex-start;
-      position: absolute;
-      top: calc(100vh - 140px);
-      z-index: 105;
-      left: -100%;
-      width: 100%;
-      width: calc(100% - 30px);
-      margin-right: 0;
-    }
-    &.open {
-      left: 15px;
+      display: none;
     }
   }
   &__phone {
@@ -179,6 +182,8 @@
 
 .burger-menu {
   display: none;
+  position: relative;
+  z-index: 105;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -225,13 +230,13 @@
     transform: rotate(-45deg) translate(4.7px, -4.5px);
   }
 
-  &.active ~ .header__nav {
+  &.active ~ .header__nav-wrapper {
     left: 0;
     height: 100%;
     opacity: 1;
     overflow: hidden;
-    .nav__list {
-      height: calc(100vh - 210px);
+    .header__buttons {
+      transform: translateX(0);
     }
   }
 }
