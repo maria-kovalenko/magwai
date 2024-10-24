@@ -1,3 +1,5 @@
+// import {truncateTextInCards} from './truncate_text.js'
+
 const loadMoreBtn = document.getElementById('load-more');
   const span = document.querySelector('.cards__load-more-span');
   const postsContainer = document.querySelector('.cards__wrapper');
@@ -26,6 +28,7 @@ const loadMoreBtn = document.getElementById('load-more');
               </div>
             </article>`;
         });
+        truncateTextInCards()
         postCount += 5;
         if (postCount >= 30) loadMoreBtn.style.display = 'none';
       })

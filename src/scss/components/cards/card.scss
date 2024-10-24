@@ -1,4 +1,6 @@
 .card {
+  display: flex;
+  flex-direction: column;
   max-width: 100%;
   cursor: pointer;
   background-color: #fff;
@@ -20,6 +22,9 @@
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     padding: 25px 23.71px 30px;
   }
 
@@ -54,6 +59,7 @@
     font-size: 12px;
     line-height: 24px;
     margin-bottom: 25px;
+    margin-top: auto;
     span {
       font-weight: 700;
       color: $color-text;
