@@ -1,13 +1,22 @@
 .card {
-  max-width: 320px;
-  min-height: 621px;
+  max-width: 100%;
+  cursor: pointer;
   background-color: #fff;
   color: $color-black;
+  @media (max-width: $tablet-width) {
+    min-height: auto;
+  }
+
   &__image-wrapper {
-    height: 185px;
+    overflow: hidden;
+
+    @media (max-width: $tablet-width) {
+      overflow: hidden;
+    }
   }
   &__image {
     display: block;
+    width: 100%;
   }
 
   &__content {
@@ -49,8 +58,5 @@
       font-weight: 700;
       color: $color-text;
     }
-  }
-
-  &__button {
   }
 }

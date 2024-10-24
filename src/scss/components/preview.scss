@@ -7,10 +7,13 @@
   background-size: cover;
   background-position: 0px -40px;
   border-radius: 56px 55px 0 0;
-  @media (max-width: 1279px) {
+  @media (max-width: 1420px) {
+    height: auto;
+    margin-bottom: 122px;
     background-image: url(../img/preview-bg-table.webp);
   }
   @media (max-width: $tablet-width) {
+    margin-bottom: 100px;
     background-image: url(../img/preview-bg-mob.webp);
   }
 
@@ -40,20 +43,25 @@
     bottom: 96px;
     @media (max-width: 1420px) {
       max-width: 100%;
+      position: relative;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding-top: 540px;
+    }
 
-      left: 50px;
-      right: 50px;
-
-      bottom: 207px;
+    @media (max-width: $tablet-width) {
+      padding-top: 263px;
     }
   }
 
   &__title {
-    margin-bottom: 40px;
-
     &.title {
-      @media (max-width: 1420px) {
-        font-size: 38px;
+      margin-bottom: 40px;
+
+      @media (max-width: $tablet-width) {
+        margin-bottom: 20px;
       }
     }
   }
@@ -66,8 +74,23 @@
     @media (max-width: 1420px) {
       max-width: 447px;
     }
+    @media (max-width: $tablet-width) {
+      font-size: 14px;
+      max-width: 293px;
+      margin-bottom: 18px;
+    }
   }
   &__button {
     margin-left: 9px;
+    &.button {
+      @media (max-width: $tablet-width) {
+        margin-left: 3px;
+
+        min-width: fit-content;
+        padding: 16px 40px;
+
+        min-height: 40px;
+      }
+    }
   }
 }

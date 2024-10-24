@@ -81,7 +81,7 @@
       flex-direction: column;
       align-items: flex-start;
       position: absolute;
-      top: calc(100vh - 135px);
+      top: calc(100vh - 140px);
       z-index: 105;
       left: -100%;
       width: 100%;
@@ -93,26 +93,36 @@
     }
   }
   &__phone {
+    margin-right: 20px;
+
     &.button--outline {
-      margin-bottom: 6px;
       width: calc(100% - 17px);
-      margin-left: 10px;
     }
 
-    margin-right: 20px;
     @media (max-width: 1420px) {
-      margin-right: 0;
+      margin-right: 6px;
+    }
+    @media (max-width: $tablet-width) {
+      margin-left: 10px;
+      margin-bottom: 6px;
     }
   }
   &__button {
     &.button {
-      width: calc(100% - 17px);
-      margin-left: 10px;
       @media (max-width: 1700px) {
         min-width: fit-content;
       }
       @media (max-width: 1420px) {
         padding: 21px 27px;
+      }
+      @media (max-width: $tablet-width) {
+        width: calc(100% - 17px);
+        margin-left: 10px;
+      }
+    }
+    &.button--secondary::after {
+      @media (max-width: $tablet-width) {
+        content: none;
       }
     }
   }
@@ -125,10 +135,27 @@
   }
 
   &__item {
+    position: relative;
     padding: 19.5px 21px;
     cursor: pointer;
     @media (max-width: 1700px) {
       padding: 19.5px 14px;
+    }
+    @media (hover: hover) {
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        width: 0;
+        height: 2px;
+        background-color: #ffffff;
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
     }
   }
 
