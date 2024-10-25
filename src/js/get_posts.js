@@ -1,7 +1,7 @@
-// import {truncateTextInCards} from './truncate_text.js'
-
-const loadMoreBtn = document.getElementById('load-more');
+  const loadMoreBtn = document.getElementById('load-more');
   const span = document.querySelector('.cards__load-more-span');
+  const spinner = document.querySelector('.spinner');
+  const loadMoreWrapper = document.querySelector('.cards__load-more-wrapper');
   const postsContainer = document.querySelector('.cards__wrapper');
   let postCount = 10;
   
@@ -38,5 +38,5 @@ const loadMoreBtn = document.getElementById('load-more');
   
   function toggleLoading(isLoading) {
     span.textContent = isLoading ? '' : 'Загрузить еще';
-    span.classList.toggle('spinner', isLoading);
+    spinner.classList.toggle('show-spinner', isLoading);
   }
